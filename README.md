@@ -3,6 +3,6 @@
 ### Week 1 ### 
 Lecture 1 25-Sep-2023
 
-**Lord of the rings: age of personages**
+**Lord of the Rings: age of characters**
 * lotr.clj. Basic solution.
 * lotr_dea_rrecaj.clj. Author: Dea Rrecaj.
