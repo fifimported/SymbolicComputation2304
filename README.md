@@ -8,6 +8,7 @@ Lecture 1 25-Sep-2023
 * lotr_dea_rrecaj.clj. Author: Dea Rrecaj.
 
 Lecture 2 27-Sep-2023
+
 **Borsch cooking**
 * borsch.clj. Basic solution.
 * borsch_anna_olexandra_danchenko.clj. Author: Anna Olexandra Danchenko.
