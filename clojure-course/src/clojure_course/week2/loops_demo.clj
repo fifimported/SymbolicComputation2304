@@ -1,4 +1,4 @@
-(ns week2.loops-demo)
+(ns clojure-course.week2.loops-demo)
 
 (def x 5)
 

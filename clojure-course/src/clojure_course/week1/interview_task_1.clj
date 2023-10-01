@@ -5,7 +5,7 @@
 (def len (count vect))
 (def found (atom false))
 
-(println "Vector length=" len)
+(println "Vector length =" len)
  (loop [i 0]
   (when (and (= @found false) (< i len))
     (loop [j 0]

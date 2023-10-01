@@ -1,4 +1,4 @@
-(ns week2.collections-demo)
+(ns clojure-course.week2.collections-demo)
 
 (def vect [1 2 3])
 (def lst '(1 2 3))
