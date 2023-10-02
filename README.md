@@ -4,11 +4,29 @@
 Lecture 1 25-Sep-2023
 
 **Lord of the Rings: age of characters**
-* lotr.clj. Basic solution.
-* lotr_dea_rrecaj.clj. Author: Dea Rrecaj.
+* lotr*.clj. Solutions from various authors.
+
+**Interview Tasks**
+* Interview task 1 is about the sum of two values in a vector that is equal to a target.
+* Interview task 2 (and its amendment) is about stock market trading.
+See solutions from various authors.
 
 Lecture 2 27-Sep-2023
 
 **Borsch cooking**
-* borsch.clj. Basic solution.
-* borsch_anna_olexandra_danchenko.clj. Author: Anna Olexandra Danchenko.
+* borsch*.clj. Solutions from various authors.
+
+### Week 2 ### 
+
+Lecture 1 02-Oct-2023
+
+* collections_demo.clj. Code snippets for collections.
+* loops_demo.clj. Code snippets for loops.
+
+**The Sorting Hat in action**
+* sorting_hat*.clj. Solutions from various authors.
+
+
+
+
+
