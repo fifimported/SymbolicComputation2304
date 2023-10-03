@@ -1,4 +1,4 @@
-(ns clojure-course.week2.sorting-hat-roman-yepanchenko)
+(ns clojure-course.week2.sorting-hat-roman-yepanchenko_version1)
 
 (defn printStudentInfo
   [score, value]
