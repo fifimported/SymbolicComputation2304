@@ -26,6 +26,12 @@ Lecture 1 02-Oct-2023
 **The Sorting Hat in action**
 * sorting_hat*.clj. Solutions from various authors.
 
+Lecture 2 04-Oct-2023
+
+* lecture_2_2_*.clj. Explanation of the lecture's topics.
+* koschey_task_*.clj. Implementation of "Death of Koshchei the Immortal" task.
+
+
 
 
 
