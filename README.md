@@ -30,7 +30,7 @@ Lecture 2 04-Oct-2023
 
 * lecture_2_2_*.clj. Explanation of the lecture's topics.
 * koschey_task_*.clj. Implementation of "Death of Koshchei the Immortal" task.
-
+* abracadabra_*.clj. Implementation of concatenation via comp function.
 
 
 
