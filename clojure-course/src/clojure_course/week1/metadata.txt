@@ -1,0 +1,1 @@
+Target=-55557. Val1=14835. Val2=-70392. Position1=7154. Position2=7917.
