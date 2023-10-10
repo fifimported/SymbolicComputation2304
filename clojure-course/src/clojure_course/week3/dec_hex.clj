@@ -1,13 +1,9 @@
 (ns clojure-course.week3.dec-hex)
 
-; generates a random number from 100 to 999
-(def int_to_covert (+ 100 (rand-int 899)))
-(def hex_letters {10 "A" 11 "B" 12 "C" 13 "D" 14 "E" 15 "F"})
-
 (defn add_letter
   [number]
   (if (> number 9)
-    (get hex_letters number)
+    (get {10 "A" 11 "B" 12 "C" 13 "D" 14 "E" 15 "F"} number)
     (str number)
     )
   )
@@ -28,6 +24,8 @@
     )
   )
 
+; generates a random number from 100 to 999
+(def int_to_covert (+ 100 (rand-int 899)))
 (println "Integer to convert:" int_to_covert)
 (println "My hex=" (divide_with_remainder int_to_covert ""))
 (println (format "Clojure hex=%X" int_to_covert))
