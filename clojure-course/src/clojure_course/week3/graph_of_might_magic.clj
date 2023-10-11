@@ -8,7 +8,7 @@
 
 (def all_nodes
   (atom [
-         (Node. "ORE_MINE" false infinity nil)
+         (Node. "ORE_MINE" false 0 nil)
          (Node. "TAVERN" false infinity nil)
          (Node. "BLACKSMITH" false infinity nil)
          (Node. "WELL" false infinity nil)
@@ -24,7 +24,7 @@
    (Edge. "ORE_MINE" "TAVERN" 2)
    (Edge. "ORE_MINE" "BLACKSMITH" 9)
    (Edge. "TAVERN" "WELL" 3)
-   (Edge. "BLACKSMITH" "WELL" 4)
+   (Edge. "BLACKSMITH" "WELL" 3)
    ;(Edge. "TAVERN" "HOUSE" 5)
    ;(Edge. "HOUSE" "STATUE" 6)
    ;(Edge. "WELL" "STATUE" 6)
@@ -81,43 +81,87 @@
   (let [processed_nodes (filter #(true? (:processed %)) @all_nodes)]
     (print "processed: ")
     (doseq [nd processed_nodes]
-      (print (:name nd) "(" (:min_weight nd) ")" " | ")
+      (print (:name nd) "(" (:min_weight nd) "; from " (:from nd) ") | ")
       )
     (println)
     )
   )
 
-(defn process_node
-  [node_name node_name_from]
+(defn get_updated_node
+  [node node_name_from incoming_weight]
+  (let [current_weight (:min_weight node)]
+    (if (< incoming_weight current_weight)
+      (assoc node
+        :min_weight incoming_weight
+        :from node_name_from
+        )
+      (assoc node
+        ; basically, do nothing, do not update it
+        :min_weight (:min_weight node)
+        )
+      )
+    )
+  )
+
+(defn set_node_processed
+  [node]
+  (let [
+        updated_node  (assoc node :processed true )
+        node_position (.indexOf @all_nodes node)
+        updated_nodes (assoc @all_nodes node_position updated_node)
+        _ (reset! all_nodes updated_nodes)
+        ])
+  )
+
+(defn process_from_node
+  [node_name]
   (when-not (all_processed?)
     (let [node (get_node node_name)
-          node_position (.indexOf @all_nodes node)
           ;_ (println node)
           ;_ (println "node_name=" (:name node) "processed=" (:processed node) "index=" node_position)
           edges_for_node (get_edges_for_node node_name)
           ;_ (println edges_for_node)
-          node_from (get_node node_name_from)
-          ; change this node properties
-          updated_node (assoc node
-                         :processed true
-                         :min_weight (compare_weight (:min_weight node_from) (:min_weight node)))
-          ;_ (println "node=" (:name updated_node) "; processed=" (:processed updated_node))
-          updated_nodes (assoc @all_nodes node_position updated_node)
-          _ (reset! all_nodes updated_nodes)
           ;_ (println updated_nodes)
           ;_ (println all_nodes)
-          _ (print_processed_nodes)
           ]
 
           (doseq [edge edges_for_node]
             ; recursively run the same function for each node
             (let [next_node_name (get_edge_next_node_name node_name edge)
                   next_node (get_node next_node_name)
+                  edge_weight (:weight edge)
+                  transferred_node_weight (+ (:min_weight node) edge_weight)
                   ]
               ; if the next node is processed, we don't go there
+              ; let's update weight of each connected node
               (when (false? (:processed next_node))
-                  (println "run edge. from=" node_name "; go to=" next_node_name)
-                  (process_node next_node_name node_name)
+                  (println "update weight. from=" node_name "; go to=" next_node_name "; edge_weight=" edge_weight "; t_node_weight=" transferred_node_weight)
+                  (let [
+                        updated_node (get_updated_node next_node node_name transferred_node_weight)
+                        ;_ (println "node=" (:name updated_node) "; processed=" (:processed updated_node))
+                        node_position (.indexOf @all_nodes next_node)
+                        updated_nodes (assoc @all_nodes node_position updated_node)
+                        _ (reset! all_nodes updated_nodes)
+                        ]
+                    )
+                )
+              )
+            )
+
+          ; the node processed completely, all edges updated, let's seal it
+          (set_node_processed node)
+
+          ; run the same for connected nodes
+          (doseq [edge edges_for_node]
+            ; recursively run the same function for each node
+            (let [next_node_name (get_edge_next_node_name node_name edge)
+                  next_node (get_node next_node_name)
+                  ]
+              ; if the next node is processed, we don't go there
+              ; let's update weight of each connected node
+              (when (false? (:processed next_node))
+                (println "walking. from=" node_name "; go to=" next_node_name ";")
+                (process_from_node next_node_name)
                 )
               )
             )
@@ -125,9 +169,19 @@
     )
   )
 
-(def start_node "ORE_MINE")
-(def finish_node "FOUNDRY")
-(process_node start_node start_node)
+(defn find_best_path
+  [start_node_name finish_node_name]
+  (process_from_node start_node_name)
+  (let [finish_node (get_node finish_node_name)
+        ]
+    (println (format "Best path from '%s' to '%s' costs %d points" start_node_name finish_node_name (:min_weight finish_node)) )
+    (print_processed_nodes)
+    (println @all_nodes)
+    )
+  )
+
+(find_best_path "ORE_MINE" "WELL")
+
 
 
 
