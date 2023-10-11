@@ -169,12 +169,32 @@
     )
   )
 
+(defn get_path_point
+  [node_name]
+  (let [
+        node (get_node node_name)
+        from (:from node)
+        ]
+      (if (= nil from)
+        (str "")
+        (str " > " from (get_path_point from))
+        )
+    )
+  )
+
+(defn print_path_points
+  [finish_node_name]
+  (println finish_node_name (get_path_point finish_node_name))
+  )
+
 (defn find_best_path
   [start_node_name finish_node_name]
   (process_from_node start_node_name)
   (let [finish_node (get_node finish_node_name)
         ]
     (println (format "Best path from '%s' to '%s' costs %d points" start_node_name finish_node_name (:min_weight finish_node)) )
+    (print_path_points finish_node_name)
+
     (print_processed_nodes)
     (println @all_nodes)
     )
