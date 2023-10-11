@@ -22,14 +22,14 @@
 (def all_edges
   [
    (Edge. "ORE_MINE" "TAVERN" 2)
-   (Edge. "ORE_MINE" "BLACKSMITH" 9)
+   (Edge. "ORE_MINE" "BLACKSMITH" 1)
    (Edge. "TAVERN" "WELL" 3)
-   (Edge. "BLACKSMITH" "WELL" 3)
-   ;(Edge. "TAVERN" "HOUSE" 5)
-   ;(Edge. "HOUSE" "STATUE" 6)
-   ;(Edge. "WELL" "STATUE" 6)
-   ;(Edge. "WELL" "CHURCH" 8)
-   ;(Edge. "STATUE" "FOUNDRY" 4)
+   (Edge. "BLACKSMITH" "WELL" 1)
+   (Edge. "TAVERN" "HOUSE" 5)
+   (Edge. "HOUSE" "STATUE" 6)
+   (Edge. "WELL" "STATUE" 6)
+   (Edge. "WELL" "CHURCH" 8)
+   (Edge. "STATUE" "FOUNDRY" 4)
    ]
   )
 
@@ -117,12 +117,7 @@
   [node_name]
   (when-not (all_processed?)
     (let [node (get_node node_name)
-          ;_ (println node)
-          ;_ (println "node_name=" (:name node) "processed=" (:processed node) "index=" node_position)
           edges_for_node (get_edges_for_node node_name)
-          ;_ (println edges_for_node)
-          ;_ (println updated_nodes)
-          ;_ (println all_nodes)
           ]
 
           (doseq [edge edges_for_node]
@@ -138,7 +133,6 @@
                   (println "update weight. from=" node_name "; go to=" next_node_name "; edge_weight=" edge_weight "; t_node_weight=" transferred_node_weight)
                   (let [
                         updated_node (get_updated_node next_node node_name transferred_node_weight)
-                        ;_ (println "node=" (:name updated_node) "; processed=" (:processed updated_node))
                         node_position (.indexOf @all_nodes next_node)
                         updated_nodes (assoc @all_nodes node_position updated_node)
                         _ (reset! all_nodes updated_nodes)
@@ -159,6 +153,7 @@
                   ]
               ; if the next node is processed, we don't go there
               ; let's update weight of each connected node
+              ;(println "want to go. from=" node_name "; go to=" next_node_name ";")
               (when (false? (:processed next_node))
                 (println "walking. from=" node_name "; go to=" next_node_name ";")
                 (process_from_node next_node_name)
@@ -195,12 +190,12 @@
     (println (format "Best path from '%s' to '%s' costs %d points" start_node_name finish_node_name (:min_weight finish_node)) )
     (print_path_points finish_node_name)
 
-    (print_processed_nodes)
-    (println @all_nodes)
+    ;(print_processed_nodes)
+    ;(println @all_nodes)
     )
   )
 
-(find_best_path "ORE_MINE" "WELL")
+(find_best_path "ORE_MINE" "FOUNDRY")
 
 
 
