@@ -3,7 +3,7 @@ import math
 import random
 
 max_border = int(math.pow(10, 5))
-vector_len = int(math.pow(10, 4))
+vector_len = int(math.pow(10, 7))
 
 target = random.randint(-max_border, max_border)
 v1 = random.randint(0, abs(target) - 1)
