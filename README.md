@@ -32,6 +32,13 @@ Lecture 2 04-Oct-2023
 * koschey_task_*.clj. Implementation of "Death of Koshchei the Immortal" task.
 * abracadabra_*.clj. Implementation of concatenation via comp function.
 
+### Week 3 ### 
+
+Lecture 1 09-Oct-2023, 11-Oct-2023
+
+* Graphs.
+* tasks: Decimal to Hexadecimal; Graph of Might and Magic; 
+
 
 
 
