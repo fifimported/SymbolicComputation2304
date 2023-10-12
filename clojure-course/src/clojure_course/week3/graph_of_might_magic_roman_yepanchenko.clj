@@ -18,7 +18,7 @@
 
   ; debug
   ; (println path)
-
+  (println path)
   (cond
     isFoundResult (printSuccess path)
     isError (printError)

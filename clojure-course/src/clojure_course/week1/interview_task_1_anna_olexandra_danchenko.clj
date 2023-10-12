@@ -1,6 +1,11 @@
 (ns clojure-course.week1.interview-task-1-anna-olexandra-danchenko)
 
-(def vect [2 7 11 17 15])
+(load-file "src/clojure_course/week1/input_vector_interview_task1.clj")
+
+;(def vect [2 7 11 17 15])
+
+(def vect clojure-course.week1.input_vector_interview_task1/input_vector)
+(def target clojure-course.week1.input_vector_interview_task1/target)
 
 ;; Both functions assume that the vector given is not empty.
 
@@ -34,5 +39,6 @@
         (recur (rest current-vect))))
     (when (true? @not-found?))))
 
-(find-index vect 18)
-(find-index-2 vect 18)
+(print (time (find-index vect target)))
+(print (time (find-index-2 vect target)))
+

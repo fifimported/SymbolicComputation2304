@@ -1,9 +1,13 @@
 (ns clojure-course.week1.interview-task-1-roman-yepanchenko)
 
+(load-file "src/clojure_course/week1/input_vector_interview_task1.clj")
+(def vect clojure-course.week1.input_vector_interview_task1/input_vector)
+(def target clojure-course.week1.input_vector_interview_task1/target)
+
 (defn process
   [values target]
 
-  (println "vector" values)
+  ;(println "vector" values)
 
   (def stateCompleted false)
 
@@ -25,8 +29,8 @@
               (def indexes (conj indexes i2))
               (def numbers= (conj numbers value2))
 
-              (println "no" temp)
-              (println "===" numbers)
+              ;(println "no" temp)
+              ;(println "===" numbers)
               )
 
             (when (= score target)
@@ -38,8 +42,12 @@
           )
         )
       )
-    ))
-(process [2 7 11 15] 18)
+    )
+  )
+
+
+(print (time (process vect target)))
+
 ;(process [2 7 11 15] 18)
 ;
 ;(doseq [value (reverse(sort values))]

@@ -13,11 +13,17 @@
     )
   )
 
-(def my-vector [1 2 3 4 5])
-(def my-vector2 [2 7 11 15])
-(def my-target 7)
-(def my-target2 18)
+(def vect clojure-course.week1.input_vector_interview_task1/input_vector)
+(def target clojure-course.week1.input_vector_interview_task1/target)
 
-(AddValue my-vector2 my-target2)
+(def my-vector [1 2 3 4 5])
+
+(def my-target 7)
+
+
+;(AddValue my-vector2 my-target2)
+;(AddValue vect target)
+
+(print (time (AddValue vect target)))
 
 
