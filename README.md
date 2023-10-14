@@ -34,11 +34,17 @@ Lecture 2 04-Oct-2023
 
 ### Week 3 ### 
 
-Lecture 1 09-Oct-2023, 11-Oct-2023
+Lecture 1 09-Oct-2023, Lecture 2 11-Oct-2023
 
 * Graphs.
 * tasks: Decimal to Hexadecimal; Graph of Might and Magic; 
 
+### Week 4 ### 
+
+Lecture 1 16-Oct-2023, Lecture 2 18-Oct-2023
+
+* Strings.
+* tasks: The Decameron, palindromes.
 
 
 
