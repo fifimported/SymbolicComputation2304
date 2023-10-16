@@ -1,58 +1,36 @@
 (ns clojure-course.week2.loops-demo)
 
-(def x 5)
-
-(defn if_func
-  []
-  (if (= x 5)
-    (println "x equals 5")
-    (println "x not equals 5")
+; loop int value from 0 to 10
+(loop [x 0]
+  (if (> x 10)
+    (do
+      ; we return x and stop the loop. it works as return.
+      x
+      )
+    (do
+      (println "x=" x)
+      ; otherwise...
+      ; the next row increases i on 1 and goes back to loop function
+      ; to perform the next iteration
+      (recur (inc x))
+      )
     )
   )
 
-(defn if_func_mult
-  []
-  (if (= x 5)
-    (do (println "x equals 5")
-        (println "let's do something"))
-    (do (println "x not equals 5")
-        (println "let's do something"))
-    )
+(println "-----------------")
+; this is atom. It points to a variable in memory we can change.
+; we call it "y" and set value as 0
+(def y (atom 0))
+; loop int value from 0 to 10
+; remember, "y" points to some object in memory.
+; If you print "y", you will see something like "object...". This is Java toString() method.
+; got get value of atom, use "@" symbol
+(while (<= @y 10)
+  (println "y=" @y)
+  ; this function applies the function standing on second position
+  ; on the atom standing on the first position
+  ; it is the same as (inc @y)
+  (swap! y inc)
   )
 
-(defn when_func
-  []
-  (when (= 5 x)
-    (println "x equals 5")
-    )
-  )
-
-(defn cond_func
-  []
-  (cond
-    (< x 3) "x has another value"
-    (= x 5) (println "x equals 5")
-    :else 42
-    )
-  )
-
-(defn case_func
-  []
-  (case x
-    3 ("x equals 3")
-    5 (println "x equals 5")
-    )
-  )
-
-(if_func)
-;(if_func_mult)
-;(when_func)
-;(cond_func)
-;(case_func)
-
-
-
-
-
-
-
+(println "-----------------")
