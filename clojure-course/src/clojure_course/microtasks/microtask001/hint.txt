@@ -1,0 +1,1 @@
+You can solve it with one calculation: summarize the number of toes for all four paws.

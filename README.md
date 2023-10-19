@@ -1,5 +1,13 @@
 # Symbolic Computation SC-500-2304
 
+### How it Works ###
+
+See demo files with code snippets.
+
+### Microtasks ###
+
+Small assessments for 10-15 minutes to solve.
+
 ### Week 1 ### 
 Lecture 1 25-Sep-2023
 
@@ -45,6 +53,12 @@ Lecture 1 16-Oct-2023, Lecture 2 18-Oct-2023
 
 * Strings.
 * tasks: The Decameron, palindromes.
+
+### Week 5 ### 
+
+Lecture 1 23-Oct-2023, Lecture 2 25-Oct-2023
+
+
 
 
 
