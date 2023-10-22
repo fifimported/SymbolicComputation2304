@@ -27,56 +27,35 @@ cities_count = len(cities)
 print("count:" + str(cities_count))
 
 manual_pairs = []
-manual_pairs.append(["Poznan", "Krakov"])
-manual_pairs.append(["Gdansk", "Warsaw"])
-manual_pairs.append(["Gdansk", "Poznan"])
-manual_pairs.append(["Krakov", "Warsaw"])
-manual_pairs.append(["Dresden", "Warsaw"])
-manual_pairs.append(["Berlin", "Warsaw"])
-manual_pairs.append(["Prague", "Warsaw"])
-manual_pairs.append(["Dresden", "Berlin"])
-manual_pairs.append(["Prague", "Bratislava"])
-manual_pairs.append(["Budapest", "Bratislava"])
-manual_pairs.append(["Prague", "Brno"])
-manual_pairs.append(["Budapest", "Belgrade"])
-manual_pairs.append(["Tirane", "Belgrade"])
-manual_pairs.append(["Rome", "Belgrade"])
-manual_pairs.append(["Rijeka", "Zagreb"])
-manual_pairs.append(["Budapest", "Zagreb"])
-manual_pairs.append(["Graz", "Zagreb"])
-manual_pairs.append(["Graz", "Salzburg"])
-manual_pairs.append(["Vienna", "Salzburg"])
-manual_pairs.append(["Innsbruck", "Salzburg"])
-manual_pairs.append(["Magdeburg", "Berlin"])
-manual_pairs.append(["Hamburg", "Berlin"])
-manual_pairs.append(["Hamburg", "Frankfurt"])
-manual_pairs.append(["Munich", "Frankfurt"])
-manual_pairs.append(["Munich", "Verona"])
-manual_pairs.append(["Rome", "Napoli"])
-manual_pairs.append(["Tirane", "Napoli"])
-manual_pairs.append(["Munich", "Innsbruck"])
-manual_pairs.append(["Rome", "Verona"])
-manual_pairs.append(["Napoli", "Rijeka"])
-manual_pairs.append(["Tirane", "Rijeka"])
-manual_pairs.append(["Prague", "Vienna"])
-manual_pairs.append(["Prague", "Berlin"])
-manual_pairs.append(["Dresden", "Magdeburg"])
-manual_pairs.append(["Munich", "Magdeburg"])
-manual_pairs.append(["Berlin", "Napoli"])
-manual_pairs.append(["Warsaw", "Napoli"])
-manual_pairs.append(["Bratislava", "Vienna"])
-manual_pairs.append(["Zagreb", "Vienna"])
-manual_pairs.append(["Prague", "Rome"])
-manual_pairs.append(["Bratislava", "Rome"])
-manual_pairs.append(["Warsaw", "Rome"])
-manual_pairs.append(["Berlin", "Rome"])
-manual_pairs.append(["Brno", "Graz"])
-manual_pairs.append(["Munich", "Prague"])
+manual_pairs.append(["Krakov", "Warsaw", 100])
+manual_pairs.append(["Hamburg", "Berlin", 100])
+manual_pairs.append(["Warsaw", "Berlin", 300])
+manual_pairs.append(["Prague", "Berlin", 200])
+manual_pairs.append(["Munich", "Berlin", 100])
+manual_pairs.append(["Munich", "Innsbruck", 100])
+manual_pairs.append(["Vienna", "Innsbruck", 200])
+manual_pairs.append(["Vienna", "Budapest", 300])
+manual_pairs.append(["Warsaw", "Budapest", 400])
+manual_pairs.append(["Zagreb", "Budapest", 200])
+manual_pairs.append(["Vienna", "Rome", 400])
+manual_pairs.append(["Napoli", "Rome", 200])
+manual_pairs.append(["Napoli", "Rijeka", 100])
+manual_pairs.append(["Vienna", "Prague", 200])
+manual_pairs.append(["Vienna", "Rijeka", 400])
+manual_pairs.append(["Rijeka", "Zagreb", 100])
+manual_pairs.append(["Vienna", "Zagreb", 300])
+manual_pairs.append(["Munich", "Zagreb", 400])
+manual_pairs.append(["Innsbruck", "Rome", 400])
+manual_pairs.append(["Budapest", "Rome", 400])
+manual_pairs.append(["Budapest", "Berlin", 300])
+manual_pairs.append(["Prague", "Brno", 100])
+manual_pairs.append(["Prague", "Budapest", 300])
 
 for edge_pair in manual_pairs:
-    price = random.randint(1, 2) * 100
+    # price = random.randint(1, 2) * 100
     city1 = edge_pair[0]
     city2 = edge_pair[1]
+    price = edge_pair[2]
     id1 = cities.index(city1) + 1
     id2 = cities.index(city2) + 1
     edges.append([city1, city2, price, id1, id2])
@@ -130,7 +109,7 @@ with open("data.js", "w") as f:
         f.write(line)
 
 # export to csv
-with open("flights.csv", "w") as f:
+with open("flights-ICA1.csv", "w") as f:
     for edge in edges:
         for i in range(0, 3):
             f.write(str(edge[i]))

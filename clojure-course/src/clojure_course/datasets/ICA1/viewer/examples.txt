@@ -1,0 +1,52 @@
+------------------
+Example 1
+------------------
+type = organized group (g)
+plan = Krakov -> Prague
+
+Option 1:
+Krakov - Warsaw - Berlin - Prague. 100 + 300 + 300 = 700.
+
+Option 2:
+Krakov - Warsaw - Budapest - Vienna - Prague. 100 + 400 + 300 + 200 = 1000.
+
+------------------
+Example 2
+------------------
+type = family (f)
+plan = Prague -> Rijeka
+
+Option 1:
+Prague - Vienna - Rijeka. 200 + 400 = 600.
+
+------------------
+Example 3
+------------------
+type = family (f)
+plan = Munich -> Rijeka
+
+Option 1:
+Munich - Innsbruck - Vienna - Rijeka. 100 + 200 + 400 = 700.
+
+Option 2:
+Munich - Zagreb - Rijeka. 400 + 100 = 500.
+
+------------------
+Example 4
+------------------
+type = organized group (g)
+plan = Brno -> Napoli
+
+Option 1:
+Brno - Prague - Budapest - Rome - Napoli. 100 + 300 + 400 + 200 = 1000.
+
+Option 2:
+Brno - Prague - Vienna - Rijeka - Napoli. 100 + 200 + 400 + 100 = 800.
+
+Option 3:
+Brno - Prague - Vienna - Rome - Napoli. 100 + 200 + 400 + 200 = 900.
+
+
+
+
+
