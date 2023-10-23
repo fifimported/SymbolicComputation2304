@@ -55,9 +55,9 @@
   )
 
 (demo_vectors)
-;(demo_list)
-;(demo_set)
-;(demo_map)
-;(demo_Map)
+(demo_list)
+(demo_set)
+(demo_map)
+(demo_Map)
 
 

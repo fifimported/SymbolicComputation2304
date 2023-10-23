@@ -5,7 +5,7 @@
 
 (def phrase_to_encode (string/upper-case "per aspera ad astra"))
 (def cypher_key 3)
-(def alphabet_size (count caesar/aplhabet))
+(def alphabet_size (count caesar/alphabet))
 
 (def encode_letter_routine
   (fn [letter_index key]
@@ -23,9 +23,9 @@
 (defn conversion
   [phrase_to_encode key encoded_word routine]
   (let [first_letter (first phrase_to_encode)
-        letter_index (string/index-of caesar/aplhabet first_letter)
+        letter_index (string/index-of caesar/alphabet first_letter)
         encoded_index (routine letter_index key)
-        encoded_letter (get caesar/aplhabet encoded_index)
+        encoded_letter (get caesar/alphabet encoded_index)
         ;_ (println first_letter ">" encoded_letter)
         ;_ (println "encoded_word =" encoded_word)
         ]
