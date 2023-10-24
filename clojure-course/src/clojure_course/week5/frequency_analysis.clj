@@ -27,5 +27,6 @@
 (def encoded_phrase (caesar/conversion hidden/hidden_phrase_to_encode hidden/hidden_cypher_key "" caesar/encode_letter_routine))
 (println "encoded_phrase=" encoded_phrase)
 
-(println "stats=" (calculate_stats encoded_phrase))
+(println "stats=" (calculate_stats encoded_phrase)
+  )
 

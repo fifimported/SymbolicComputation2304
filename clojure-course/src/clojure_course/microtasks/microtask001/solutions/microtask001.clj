@@ -1,4 +1,4 @@
-(ns clojure-course.microtasks.microtask001.microtask001)
+(ns clojure-course.microtasks.microtask001.solutions.microtask001)
 
 ; We use "+" function, and it must be on the first position in parentheses. Other values are arguments for this function.
 ; for printing we use "println" function. It accepts many arguments, concatenate them and prints with space as divider.

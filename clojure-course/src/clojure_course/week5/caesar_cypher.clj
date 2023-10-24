@@ -36,11 +36,11 @@
     )
   )
 
-(println "phrase to encode=" phrase_to_encode)
-(def encoded_phrase (conversion phrase_to_encode cypher_key "" encode_letter_routine))
-(println "encoded phrase=" encoded_phrase)
-(def decoded_phrase (conversion encoded_phrase cypher_key "" decode_letter_routine))
-(println "decoded phrase=" decoded_phrase)
+;(println "phrase to encode=" phrase_to_encode)
+;(def encoded_phrase (conversion phrase_to_encode cypher_key "" encode_letter_routine))
+;(println "encoded phrase=" encoded_phrase)
+;(def decoded_phrase (conversion encoded_phrase cypher_key "" decode_letter_routine))
+;(println "decoded phrase=" decoded_phrase)
 
 
 
