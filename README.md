@@ -58,7 +58,12 @@ Lecture 1 16-Oct-2023, Lecture 2 18-Oct-2023
 
 Lecture 1 23-Oct-2023, Lecture 2 25-Oct-2023
 
+* Caesar Cypher: encryption, decryption, brute force crack, frequence analysis crack.
+* Head- and Tail-recursion. Fibonacci numbers, Tower of Hanoi, Permutation.
 
+### Week 6 ### 
+
+Lecture 1 30-Oct-2023, Lecture 2 01-Nov-2023
 
 
 

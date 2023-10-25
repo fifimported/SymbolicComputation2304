@@ -1,0 +1,5 @@
+name: Rabbits
+version: '1.0'
+main: com.eugene.demos.rabbits.Main
+api-version: '1.17'
+load: POSTWORLD
