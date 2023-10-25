@@ -1,7 +1,9 @@
 (ns clojure-course.week5.mafia-henchman-init-data)
 
 ; hint: you may check each vector.
-; If it contains more than 2 items -- it means you need to dive deeper.
+; If the first element is not a string -- you need to dive deeper.
+; (string? some_string)
+
 (def tribute_payers
   [
    ["Bar" 200]
