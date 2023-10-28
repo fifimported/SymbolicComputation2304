@@ -1,4 +1,4 @@
-(ns clojure-course.week5.frequency-analysis
+(ns clojure-course.week5.caesar_cypher_frequency_analysis
   (:require [clojure-course.week5.caesar-cypher-init-data :as init_data])
   (:require [clojure-course.week5.caesar-cypher :as caesar])
   (:require [clojure-course.week5.caesar-cypher-hidden :as hidden])
