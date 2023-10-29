@@ -11,9 +11,9 @@
    (Node. "node1" false)
    (Node. "node2" false)
    (Node. "node3" false)
-   (Node. "node4" false)
+   (Node. "node4" true)
    (Node. "node5" false)
-   (Node. "node6" true)
+   (Node. "node6" false)
    (Node. "node7" false)
    ]
   )

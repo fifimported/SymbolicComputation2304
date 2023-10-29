@@ -1,4 +1,4 @@
-(ns clojure-course.week6.dfs
+(ns clojure-course.week6.dfs-2
   (:require [clojure-course.week6.tree-init-data :as tree])
   )
 
@@ -28,29 +28,23 @@
 (def num_of_iterations (atom 0))
 
 (defn dfn_routines
-  ; node -- object
-  [node]
-  (println "processing" (:name node))
-  (swap! num_of_iterations inc)
-  (if (true? (:find_me node))
-    node
-    (let [children (get_children_for_node (:name node))
-          node_found (atom nil)
-          ]
-      (doseq [node_child children]
-        (when (nil? @node_found)
-          ;(println "node_child =" node_child)
-          (reset! node_found (dfn_routines node_child))
-          (println "node_found=" @node_found "; called from node=" (:name node))
-          )
-        )
-
-      @node_found
+  ; subset of nodes (objects)
+  [nodes]
+  (println "nodes=" nodes )
+  (loop [current_node (first nodes)
+         ]
+    (println "current_node=" (:name current_node) )
+    (if (nil? current_node)
+      ; all nodes covered
+      (println "nil!")
+      (recur (first (rest nodes)))
       )
+
     )
+
   )
 
-(println "result =" (dfn_routines root_node))
-(println "number of iterations =" @num_of_iterations)
+(dfn_routines (vector root_node))
+
 
 
