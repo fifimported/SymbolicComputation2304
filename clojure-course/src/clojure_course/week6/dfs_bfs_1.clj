@@ -41,7 +41,7 @@
         (when (nil? @node_found)
           ;(println "node_child =" node_child)
           (reset! node_found (dfs_routines node_child))
-          (println "node_found=" @node_found "; called from=" (:name node))
+          (println "node_found=" (:name @node_found) "; called from=" (:name node))
           )
         )
 
@@ -59,7 +59,7 @@
 (defn bfs_routines
   ; nodes -- list of objects
   [nodes]
-  (println "processing nodes ->"nodes)
+  ;(println "processing nodes ->"nodes)
   (let [node_found (atom nil)]
     ; check all node at the given depth
     (doseq [node nodes]
