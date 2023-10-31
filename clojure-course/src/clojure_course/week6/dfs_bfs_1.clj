@@ -1,3 +1,4 @@
+; implementation of DFS and BFS for trees
 (ns clojure-course.week6.dfs_bfs_1
   (:require [clojure-course.week6.tree-init-data :as tree])
   )

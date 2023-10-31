@@ -1,6 +1,4 @@
-(ns clojure-course.week6.labyrinth
-  )
-
+(ns clojure-course.week6.labyrinth)
 
 (defrecord Node [name find_me])
 
