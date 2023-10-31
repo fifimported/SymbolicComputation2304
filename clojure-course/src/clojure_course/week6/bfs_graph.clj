@@ -20,7 +20,7 @@
           :let [node_name (:name current_node)]
           :when (not (.contains @visited node_name))]
     (println node_name "is visited")
-
+    ; here the place for some logic related with nodes
     )
   ; then traverse every node children
   (doseq [current_node nodes
