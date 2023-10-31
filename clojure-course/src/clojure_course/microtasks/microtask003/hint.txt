@@ -1,0 +1,1 @@
+When a new generation gets three years old, they give birth to a new cat. You may raise recursion generation after generation with step equal 3 until reach 100. Also, you may refer to file week5\fibonacci.clj.
