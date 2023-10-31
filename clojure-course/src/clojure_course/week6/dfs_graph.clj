@@ -15,7 +15,6 @@
    all_edges
    ]
   (println (:name current_node) "is visited")
-  ;(println "visited="visited)
   (let [edges (funcs/get_edges_for_node current_node all_edges)
         ]
     (doseq [edge edges
@@ -29,6 +28,8 @@
     )
   )
 
+(println "DFS DEMO")
+(println "----------")
 (dfs-graph (funcs/get_node "A" graph/all_nodes) graph/all_nodes graph/all_edges)
 
 ; for debug

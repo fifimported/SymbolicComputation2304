@@ -23,3 +23,20 @@
     :else (get_node (:node1 edge) all_nodes)
     )
   )
+
+(defn get_children_for_node
+  [node_name all_edges all_nodes]
+  (let [this_node (get_node node_name all_nodes)
+        ;_ (println "this_node" this_node)
+        ;_ (println "all_edges" all_edges)
+        edges_for_this_node (get_edges_for_node this_node all_edges)
+        ;_ (println "edges_for_this_node"edges_for_this_node)
+        children (atom [])]
+    (when-not (nil? edges_for_this_node)
+      (doseq [edge edges_for_this_node]
+        (swap! children conj (get_another_node_for_edge this_node edge all_nodes))
+        )
+      )
+    @children
+    )
+  )
