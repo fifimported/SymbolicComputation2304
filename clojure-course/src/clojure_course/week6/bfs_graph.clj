@@ -20,16 +20,27 @@
           :let [node_name (:name current_node)]
           :when (not (.contains @visited node_name))]
     (println node_name "is visited")
-    (swap! visited conj node_name)
+
     )
   ; then traverse every node children
-  (doseq [current_node nodes]
-    (let [edges (funcs/get_edges_for_node current_node all_edges)
-          children (funcs/get_children_for_node (:name current_node) edges all_nodes)
+  (doseq [current_node nodes
+          :let [node_name (:name current_node)]
+          :when (not (.contains @visited node_name))]
+    (let [
+          node_name (:name current_node)
+          edges (funcs/get_edges_for_node current_node all_edges)
+          _ (println "I am in " node_name "edges=" edges)
+          children (funcs/get_children_for_node node_name edges all_nodes)
+          _ (println "children=" children)
           ]
+        (swap! visited conj node_name)
+        (println "visited="@visited)
         (bfs_graph children all_nodes all_edges)
+
+
       )
     )
+
   )
 
 (println "BFS DEMO")

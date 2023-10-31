@@ -20,9 +20,9 @@
   [
    (Edge. "A" "B")
    (Edge. "A" "C")
-   (Edge. "C" "B")
-   (Edge. "C" "E")
    (Edge. "B" "D")
+   (Edge. "B" "C")
+   (Edge. "C" "E")
    ]
   )
 
