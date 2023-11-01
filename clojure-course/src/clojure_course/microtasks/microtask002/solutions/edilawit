@@ -1,0 +1,9 @@
+(defn total-toes [front-toes back-toes]
+  (+ front-toes back-toes))
+
+(def front-toes 5)
+(def back-toes 4)
+
+(def total-dog-toes (total-toes front-toes back-toes))
+
+(println "# of toes on the dog: " total-dog-toes)
